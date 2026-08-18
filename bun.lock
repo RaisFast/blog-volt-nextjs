@@ -6,7 +6,7 @@
       "name": "blog-volt",
       "dependencies": {
         "@base-ui/react": "^1.5.0",
-        "@raisfast/sdk": "^0.2.1",
+        "@raisfast/sdk": "^0.2.3",
         "@vercel/analytics": "^2.0.1",
         "class-variance-authority": "^0.7.1",
         "clsx": "^2.1.1",
@@ -387,7 +387,7 @@
 
     "@oxc-transform/binding-win32-x64-msvc": ["@oxc-transform/binding-win32-x64-msvc@0.111.0", "", { "os": "win32", "cpu": "x64" }, "sha512-QddKW4kBH0Wof6Y65eYCNHM4iOGmCTWLLcNYY1FGswhzmTYOUVXajNROR+iCXAOFnOF0ldtsR79SyqgyHH1Bgg=="],
 
-    "@raisfast/sdk": ["@raisfast/sdk@0.2.1", "", {}, "sha512-88Kh1eYyAcDjigZMy5HQ05VTNSLiXd0W4vknZ+HhRB+4zK4GKO+x9EUvwYB7a0ckkxlhuu7HgqAfVqImaiTWjA=="],
+    "@raisfast/sdk": ["@raisfast/sdk@0.2.3", "", {}, "sha512-f881Wgkhq5z8kOSX+RuJYxBt0+QVA3t66PhHbLOGWNPHe7D9Dn9VKox0qnebiw1HLnCVR61rzn6WzlBuHDEnZg=="],
 
     "@renovatebot/pep440": ["@renovatebot/pep440@4.2.1", "", {}, "sha512-2FK1hF93Fuf1laSdfiEmJvSJPVIDHEUTz68D3Fi9s0IZrrpaEcj6pTFBTbYvsgC5du4ogrtf5re7yMMvrKNgkw=="],
 
