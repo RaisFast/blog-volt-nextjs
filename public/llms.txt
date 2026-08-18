@@ -1,0 +1,39 @@
+# [Blog Volt](https://github.com/RaisFast/raisfast)
+
+> A bold, brutalist blog template powered by RaisFast — the Rust-powered high-performance BaaS and headless CMS.
+
+## What is Blog Volt?
+
+Blog Volt is a high-energy, brutalist blog template that demonstrates the content management capabilities of RaisFast. It features mono-spaced typography, thick borders, no border radius, all-caps headings, category and tag navigation, and full SEO optimization. Form follows function.
+
+## Key Features
+
+- Server-side rendering with Next.js App Router
+- Brutalist design: mono font, thick borders, all-caps, no curves
+- Category and tag-based navigation
+- Full-text search
+- SEO: Open Graph, Twitter Card, JSON-LD (Article), sitemap.xml, robots.txt, canonical
+- Responsive design with mobile-first approach
+
+## Tech Stack
+
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Fonts**: Geist Mono
+- **API**: RaisFast SDK (@raisfast/sdk)
+
+## API Endpoints Used
+
+- `GET /api/v1/posts` — Post listing with pagination
+- `GET /api/v1/posts/:slug` — Post detail by slug
+- `GET /api/v1/categories` — Category listing
+- `GET /api/v1/tags` — Tag listing
+
+## Getting Started
+
+```bash
+npm install
+cp .env.example .env.local
+npm run dev
+```

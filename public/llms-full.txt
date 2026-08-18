@@ -1,0 +1,125 @@
+# Blog Volt — Full Documentation
+
+## Overview
+
+Blog Volt is a bold, brutalist blog template built on the RaisFast platform. It delivers a high-energy reading experience with mono-spaced typography, thick borders, zero border radius, and all-caps headings — a no-nonsense design philosophy where form follows function.
+
+## Architecture
+
+### Rendering Strategy
+- Server Components for data fetching (posts, categories, tags)
+- Client Components for interactive UI (search)
+- Dynamic rendering with `force-dynamic`
+
+### Data Flow
+```
+Next.js Server Component
+  → RaisFast SDK (lib/api.ts)
+    → RaisFast Backend API (/api/v1/*)
+      → SQLite / PostgreSQL / MySQL
+```
+
+## Pages
+
+### Home Page (`/`)
+- Featured post hero section
+- Top 3 articles grid
+- Remaining articles (2 columns)
+- Load more button
+
+### Post Detail (`/posts/[slug]`)
+- Category badge
+- Title, author, date
+- Cover image
+- HTML content with prose styling
+- Tags
+- Post navigation
+- SEO: OG image, JSON-LD Article schema, canonical, Twitter Card
+
+### Categories (`/categories`)
+- Category listing page
+- Link to category-specific post lists
+
+### Category Posts (`/categories/[slug]`)
+- Posts filtered by category
+- Grid layout
+
+### Tags (`/tags`)
+- Tag listing page
+- Link to tag-specific post lists
+
+### Tag Posts (`/tags/[slug]`)
+- Posts filtered by tag
+- Grid layout
+
+### About (`/about`)
+- Static about page with brutalist design philosophy
+
+### Search (`/search`)
+- Full-text search with results grid
+
+## Components
+
+### Header (`components/header.tsx`)
+- Site logo/name
+- Navigation (Home, Categories, Tags, About)
+- Mobile responsive
+
+### Footer (`components/footer.tsx`)
+- Site info
+- Navigation links
+- Copyright
+
+### PostHero (`components/post-hero.tsx`)
+- Large featured card for the latest post
+
+### PostCard (`components/post-card.tsx`)
+- Card with cover image, title, excerpt, date, category
+
+### PostNav (`components/post-nav.tsx`)
+- Previous/next post navigation
+
+## SEO Implementation
+
+### Meta Tags (all pages)
+- `<title>` with template `%s — VOLT`
+- `<meta name="description">`
+- `<link rel="canonical">`
+- Open Graph: title, description, url, image, type
+- Twitter Card: summary_large_image
+
+### JSON-LD (post pages)
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "...",
+  "description": "...",
+  "image": "...",
+  "datePublished": "...",
+  "dateModified": "...",
+  "author": { "@type": "Person", "name": "..." }
+}
+```
+
+### Sitemap (`/sitemap.xml`)
+- Dynamic generation from API data
+- Includes: home, categories, tags, about, all posts
+
+### Robots (`/robots.txt`)
+- Allow all except /search, /api/
+- Points to sitemap.xml
+
+## Environment Variables
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `NEXT_PUBLIC_API_URL` | RaisFast API base URL | `http://localhost:9898/api/v1` |
+| `NEXT_PUBLIC_SITE_URL` | Site URL for SEO | `https://example.com` |
+
+## Deployment
+
+```bash
+npm run build
+npm start
+```
