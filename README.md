@@ -22,9 +22,18 @@ A brutalist blog template for [RaisFast](https://raisfast.com) — the Rust-powe
 
 ## Getting Started
 
-1. Start your RaisFast server (default `http://localhost:9898`), or use any RaisFast instance.
+1. Clone the repo:
 
-2. Install and run:
+```bash
+git clone https://github.com/RaisFast/blog-volt-nextjs.git
+cd blog-volt-nextjs
+```
+
+2. Start your RaisFast server (default `http://localhost:9898`), or use any RaisFast instance. See the [RaisFast docs](https://github.com/RaisFast/raisfast) to get one running.
+
+3. Copy `.env.example` to `.env.local` and point it at your server (see [Configuration](#configuration)).
+
+4. Install and run:
 
 ```bash
 bun install
@@ -33,7 +42,8 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-3. Seed blog content (posts, categories, tags) from the RaisFast admin panel.
+5. Seed blog content (posts, categories, tags) from the RaisFast admin panel.
+
 
 ## Configuration
 
