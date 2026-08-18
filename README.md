@@ -1,31 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# VOLT — RaisFast Blog Template
+
+A brutalist blog template for [RaisFast](https://raisfast.com) — the Rust-powered BaaS & headless CMS. Bold uppercase type, thick borders, high contrast, dark mode, built with Next.js 16 + Tailwind CSS.
+
+![RaisFast](public/logo.png)
+
+## Tech Stack
+
+- **Framework**: Next.js 16 (App Router, Turbopack)
+- **Styling**: Tailwind CSS v4
+- **Content**: RaisFast CMS via [`@raisfast/sdk`](https://www.npmjs.com/package/@raisfast/sdk)
+- **Markdown**: marked
+- **Package manager**: [bun](https://bun.sh)
+
+## Features
+
+- Home / posts / categories / tags / about / search pages
+- Hero post with cover-image gradient fallback
+- SEO ready: metadata, Open Graph, JSON-LD, `sitemap.xml`, `robots.txt`, `feed.xml`
+- Dark mode (follows system preference, persisted)
+- Responsive design
 
 ## Getting Started
 
-First, run the development server:
+1. Start your RaisFast server (default `http://localhost:9898`), or use any RaisFast instance.
+
+2. Install and run:
 
 ```bash
 bun install
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Seed blog content (posts, categories, tags) from the RaisFast admin panel.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Configuration
 
-## Learn More
+Copy `.env.example` to `.env.local` and adjust:
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Variable | Description | Default |
+|---|---|---|
+| `NEXT_PUBLIC_API_URL` | RaisFast API base URL | `http://localhost:9898/api/v1` |
+| `NEXT_PUBLIC_SITE_URL` | Site URL for SEO (canonical, OG, sitemap) | `https://raisfast.com` |
+| `NEXT_PUBLIC_GITHUB_URL` | GitHub link in header/footer | `https://github.com/raisfast/raisfast` |
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Import the repo on [Vercel](https://vercel.com/new), set the environment variables above, and deploy. `NEXT_PUBLIC_*` variables are inlined at build time — redeploy after changing them.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Related
+
+- [RaisFast](https://github.com/RaisFast/raisfast) — the backend
+- [blog-foundry-nextjs](https://github.com/RaisFast/blog-foundry-nextjs) / [blog-kanso-nextjs](https://github.com/RaisFast/blog-kanso-nextjs) — other blog templates
+- [ecommerce-forge-nextjs](https://github.com/RaisFast/ecommerce-forge-nextjs) — ecommerce template
